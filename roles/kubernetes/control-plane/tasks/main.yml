@@ -86,6 +86,14 @@
 - name: Include kubeadm setup
   import_tasks: kubeadm-setup.yml
 
+- name: Label control plane nodes with inventory hostname if kube_override_hostname is defined
+  command: >-
+     {{ kubectl }} label node {{ kube_override_hostname }} kubespray.io/hostname={{ inventory_hostname }}
+  register: label_control_plane_hostname
+  changed_when: label_control_plane_hostname.stdout is not search('not labeled')
+  when:
+    - kube_override_hostname is defined and kube_override_hostname != inventory_hostname
+
 - name: Include kubeadm etcd extra tasks
   include_tasks: kubeadm-etcd.yml
   when: etcd_deployment_type == "kubeadm"
