@@ -111,6 +111,7 @@ Note:
 <!-- BEGIN ANSIBLE MANAGED BLOCK -->
 
 - Core
+<<<<<<< HEAD
   - [kubernetes](https://github.com/kubernetes/kubernetes) 1.33.7
   - [etcd](https://github.com/etcd-io/etcd) 3.5.25
   - [docker](https://www.docker.com/) 28.3
@@ -121,6 +122,18 @@ Note:
   - [calico](https://github.com/projectcalico/calico) 3.30.5
   - [cilium](https://github.com/cilium/cilium) 1.18.4
   - [flannel](https://github.com/flannel-io/flannel) 0.27.3
+=======
+  - [kubernetes](https://github.com/kubernetes/kubernetes) 1.32.6
+  - [etcd](https://github.com/etcd-io/etcd) 3.5.16
+  - [docker](https://www.docker.com/) 28.0
+  - [containerd](https://containerd.io/) 2.0.5
+  - [cri-o](http://cri-o.io/) 1.32.0 (experimental: see [CRI-O Note](docs/CRI/cri-o.md). Only on fedora, ubuntu and centos based OS)
+- Network Plugin
+  - [cni-plugins](https://github.com/containernetworking/plugins) 1.4.1
+  - [calico](https://github.com/projectcalico/calico) 3.29.4
+  - [cilium](https://github.com/cilium/cilium) 1.17.3
+  - [flannel](https://github.com/flannel-io/flannel) 0.22.0
+>>>>>>> 1e76d9113 (Patch versions updates (#12330))
   - [kube-ovn](https://github.com/alauda/kube-ovn) 1.12.21
   - [kube-router](https://github.com/cloudnativelabs/kube-router) 2.1.1
   - [multus](https://github.com/k8snetworkplumbingwg/multus-cni) 4.2.2

@@ -35,8 +35,13 @@ RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN OS_ARCHITECTURE=$(dpkg --print-architecture) \
+<<<<<<< HEAD
     && curl -L "https://dl.k8s.io/release/v1.33.7/bin/linux/${OS_ARCHITECTURE}/kubectl" -o /usr/local/bin/kubectl \
     && echo "$(curl -L "https://dl.k8s.io/release/v1.33.7/bin/linux/${OS_ARCHITECTURE}/kubectl.sha256")" /usr/local/bin/kubectl | sha256sum --check \
+=======
+    && curl -L "https://dl.k8s.io/release/v1.32.6/bin/linux/${OS_ARCHITECTURE}/kubectl" -o /usr/local/bin/kubectl \
+    && echo "$(curl -L "https://dl.k8s.io/release/v1.32.6/bin/linux/${OS_ARCHITECTURE}/kubectl.sha256")" /usr/local/bin/kubectl | sha256sum --check \
+>>>>>>> 1e76d9113 (Patch versions updates (#12330))
     && chmod a+x /usr/local/bin/kubectl
 
 COPY *.yml ./
