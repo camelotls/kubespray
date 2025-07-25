@@ -48,12 +48,17 @@ RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1 \
     && pip install --no-compile --no-cache-dir -r tests/requirements.txt \
     && pip install --no-compile --no-cache-dir -r requirements.txt \
 <<<<<<< HEAD
+<<<<<<< HEAD
     && curl -L https://dl.k8s.io/release/v1.33.7/bin/linux/$(dpkg --print-architecture)/kubectl -o /usr/local/bin/kubectl \
     && echo $(curl -L https://dl.k8s.io/release/v1.33.7/bin/linux/$(dpkg --print-architecture)/kubectl.sha256) /usr/local/bin/kubectl | sha256sum --check \
 =======
     && curl -L https://dl.k8s.io/release/v1.32.6/bin/linux/$(dpkg --print-architecture)/kubectl -o /usr/local/bin/kubectl \
     && echo $(curl -L https://dl.k8s.io/release/v1.32.6/bin/linux/$(dpkg --print-architecture)/kubectl.sha256) /usr/local/bin/kubectl | sha256sum --check \
 >>>>>>> 1e76d9113 (Patch versions updates (#12330))
+=======
+    && curl -L https://dl.k8s.io/release/v1.32.7/bin/linux/$(dpkg --print-architecture)/kubectl -o /usr/local/bin/kubectl \
+    && echo $(curl -L https://dl.k8s.io/release/v1.32.7/bin/linux/$(dpkg --print-architecture)/kubectl.sha256) /usr/local/bin/kubectl | sha256sum --check \
+>>>>>>> 86fcc2ba5 (Patch versions updates (#12431))
     && chmod a+x /usr/local/bin/kubectl \
     # Install Vagrant
     && curl -LO https://releases.hashicorp.com/vagrant/${VAGRANT_VERSION}/vagrant_${VAGRANT_VERSION}-1_$(dpkg --print-architecture).deb \
